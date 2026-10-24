@@ -703,17 +703,33 @@
       }
     }
     
+
+/* Default: one picture for every menu category */
 .menu-photo {
-  display: flex;
-  gap: 5px;
+  display: block;
   width: 100%;
   height: 200px;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: 10px;
+  background: linear-gradient(135deg, #f1e8ff, #fbf8ff);
 }
 
 .menu-photo img {
-  width: 50%;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Coffee category only: show two pictures side by side */
+#panel-coffee .menu-photo {
+  display: flex;
+  gap: 5px;
+}
+
+#panel-coffee .menu-photo img {
+  width: calc(50% - 2.5px);
   height: 100%;
   object-fit: cover;
 }
